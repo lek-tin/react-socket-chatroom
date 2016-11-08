@@ -1,0 +1,110 @@
+{# http://preview.codecanyon.net/item/material-modern-chat/full_screen_preview/14211560 #}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>ChatRoom - Template</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" href="/css/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/chat.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- BEGIN CHAT -->
+        <div id="mmc-chat" class="color-default">
+            <!-- BEGIN CHAT BOX -->
+            <div class="chat-box">
+                <!-- BEGIN CHAT BOXS -->
+                <ul class="boxs">
+                    <!-- BEGIN CHAT BOX -->
+                    <li class="box " data-id="2">
+                    </li>
+                    <!-- END CHAT BOX -->
+                </ul>
+                <!-- END CHAT BOXS -->
+            </div>
+            <!-- END CHAT BOX -->
+        </div>
+        <!-- END CHAT -->
+        <!-- BEGIN SIDEBAR -->
+        <div id="sidebar" class="right scroll">
+            <div class="had-container">
+                <!-- BEGIN SIDEBAR HEADER-->
+                <div class="sidebar-header">
+                    <div class="sidebar-collapse"><i class="small material-icons">reorder</i></div>
+                    <!-- BEGIN SEARCHBAR-->
+                    <div class="row searchbar">
+                        <div class="input-field col s12 search ">
+                            <input value="" id="search" type="text" class="validate" data-placeholder="Search">
+                            <label class="" for="search">Search user</label>
+                        </div>
+                        <!-- BEGIN SEARCHBAR COLLAPSED ICON-->
+                        <div class="searchbar-closed">
+                            <div class="searchbar-closed tooltipped" data-position="left" data-tooltip="Search" data-tooltip-id="b8a809fc-bc40-4ff9-1356-4daede46cbf5"><i class="small material-icons">search</i></div>
+                        </div>
+                        <!-- END SEARCHBAR COLLAPSED ICON-->
+                    </div>
+                    <!-- END SEARCHBAR-->
+                </div>
+                <!-- END SIDEBAR HEADER-->
+                <!-- BEGIN USERS -->
+                <div class="users">
+                    <ul class="user-list" wave-effect="true" wave-color="waves-teal">
+                        <!-- BEGIN USER-->
+                        <li class="user-tooltip waves-effect waves-teal" data-id="1" data-status="online" data-username="Rufat Askerov" data-position="left" data-tooltip="Rufat Askerov">
+                            <!-- BEGIN USER IMAGE-->
+                            <div class="user-image">
+                                <img src="assets/img/user-1.png" class="avatar" alt="Rufat Askerov">
+                            </div>
+                            <!-- END USER IMAGE-->
+                            <!-- BEGIN USERNAME-->
+                            <span class="user-name">Rufat Askerov</span>
+                            <!-- END USERNAME-->
+                        </li>
+                        <!-- END USER-->
+                        <!-- BEGIN USER-->
+                        <li class="user-tooltip waves-effect waves-teal" data-id="3" data-status="online" data-username="Alice" data-position="left" data-tooltip="Alice">
+                            <div class="user-image">
+                                <img src="assets/img/user-3.png" class="avatar" alt="Alice">
+                            </div>
+                            <span class="user-name">Alice</span>
+                        </li>
+                        <!-- BEGIN USER-->
+                        <li class="user-tooltip waves-effect waves-teal" data-id="7" data-status="offline" data-username="Michael Scofield" data-position="left" data-tooltip="Michael Scofield">
+                            <div class="user-image">
+                                <img src="assets/img/user-7.png" class="avatar" alt="Michael Scofield">
+                            </div>
+                            <span class="user-name">Michael Scofield</span>
+                        </li>
+                        <!-- BEGIN USER-->
+                        <li class="user-tooltip waves-effect waves-teal" data-id="5" data-status="online" data-username="Irina Shayk" data-position="left" data-tooltip="Irina Shayk">
+                            <div class="user-image">
+                                <img src="assets/img/user-5.png" class="avatar" alt="Irina Shayk">
+                            </div>
+                            <span class="user-name">Irina Shayk</span>
+                        </li>
+                        <!-- BEGIN USER-->
+                        <li class="user-tooltip waves-effect waves-teal" data-id="6" data-status="offline" data-username="Sara Tancredi" data-position="left" data-tooltip="Sara Tancredi">
+                            <div class="user-image">
+                                <img src="assets/img/user-6.png" class="avatar" alt="Sara Tancredi">
+                            </div>
+                            <span class="user-name">Sara Tancredi</span>
+                        </li>
+                    </ul>
+                    <!--also you may add wave effect other way-->
+                    <!--<ul class="user-list" wave-effect="false">
+                                <li class="waves-effect waves-teal">
+                                    <img src="assets/img/avatar.png" class="avatar" alt="Rufat Askerov" />
+                                    <span class="user-name">Rufat Askerov</span>
+                                </li>
+                            </ul>-->
+                </div>
+                <!-- END USERS -->
+            </div>
+        </div>
+        <!-- END SIDEBAR -->
+    </div>
+</body>
+
+</html>
