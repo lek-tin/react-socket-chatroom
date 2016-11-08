@@ -29362,6 +29362,10 @@
 	
 	var _MessageInput2 = _interopRequireDefault(_MessageInput);
 	
+	var _MessagesHistory = __webpack_require__(227);
+	
+	var _MessagesHistory2 = _interopRequireDefault(_MessagesHistory);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var Dialog = _react2.default.createClass({
@@ -29370,6 +29374,11 @@
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "dialog" },
+	      _react2.default.createElement(_MessagesHistory2.default, null),
+	      _react2.default.createElement(_MessagesHistory2.default, null),
+	      _react2.default.createElement(_MessagesHistory2.default, null),
+	      _react2.default.createElement(_MessagesHistory2.default, null),
+	      _react2.default.createElement(_MessagesHistory2.default, null),
 	      _react2.default.createElement(_MessageInput2.default, null)
 	    );
 	  }
@@ -29395,16 +29404,20 @@
 	
 	var MessageInput = _react2.default.createClass({
 		displayName: "MessageInput",
-		getInitialState: function getInitialState() {
-			return {
-				userId: 'xxxxxxxxxxxxxxxxxx',
-				timestamp: new Data(),
-				message: this.refs.inputBox
-			};
-		},
-		_handleSend: function _handleSend(e) {
-			console.log(this.refs.inputBox.e.value);
-		},
+	
+	
+		// getInitialState() {
+		// 	return {
+		// 		userId: 'xxxxxxxxxxxxxxxxxx',
+		// 		timestamp: new Data(),
+		// 		message: this.refs.inputBox
+		// 	};
+		// },
+	
+		// _handleSend(e) {
+		// 	console.log(this.refs.inputBox.e.value);
+		// },
+	
 		render: function render() {
 			return _react2.default.createElement(
 				"div",
@@ -29424,6 +29437,38 @@
 	});
 	
 	exports.default = MessageInput;
+
+/***/ },
+/* 227 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	var MessagesHistory = _react2.default.createClass({
+	  displayName: "MessagesHistory",
+	  getInitialState: function getInitialState() {
+	    return {};
+	  },
+	  render: function render() {
+	    return _react2.default.createElement(
+	      "div",
+	      null,
+	      "aldladapdaopdkpadkapdkapodkapodao"
+	    );
+	  }
+	});
+	
+	exports.default = MessagesHistory;
 
 /***/ }
 /******/ ]);

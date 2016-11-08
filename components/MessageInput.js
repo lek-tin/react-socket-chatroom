@@ -2,17 +2,17 @@ import React from "react";
 
 const MessageInput = React.createClass({
 
-	getInitialState() {
-		return {
-			userId: 'xxxxxxxxxxxxxxxxxx',
-			timestamp: new Data(),
-			message: this.refs.inputBox
-		};
-	},
+	// getInitialState() {
+	// 	return {
+	// 		userId: 'xxxxxxxxxxxxxxxxxx',
+	// 		timestamp: new Data(),
+	// 		message: this.refs.inputBox
+	// 	};
+	// },
 
-	_handleSend(e) {
-		console.log(this.refs.inputBox.e.value);
-	},
+	// _handleSend(e) {
+	// 	console.log(this.refs.inputBox.e.value);
+	// },
 
     render() {
         return ( 
