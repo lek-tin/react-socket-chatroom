@@ -29414,18 +29414,17 @@
 		// 	};
 		// },
 	
-		// _handleSend(e) {
-		// 	console.log(this.refs.inputBox.e.value);
-		// },
-	
+		_handleSend: function _handleSend(e) {
+			console.log(this.refs.inputBox);
+		},
 		render: function render() {
 			return _react2.default.createElement(
 				"div",
-				null,
-				_react2.default.createElement("input", { type: "text", onChange: this._handleSend, ref: "inputBox", name: "MessageInput", id: "MessageInput" }),
+				{ className: "message--input" },
+				_react2.default.createElement("input", { type: "text", ref: "inputBox", name: "MessageInput", id: "MessageInput" }),
 				_react2.default.createElement(
 					"button",
-					{ className: "btn waves-effect waves-light", type: "submit", name: "action" },
+					{ ref: "sendButton", onSubmit: this._handleSend, className: "btn waves-effect waves-light", type: "submit", name: "action" },
 					_react2.default.createElement(
 						"i",
 						{ className: "material-icons right" },
@@ -29442,10 +29441,10 @@
 /* 227 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
-	  value: true
+	    value: true
 	});
 	
 	var _react = __webpack_require__(1);
@@ -29455,17 +29454,48 @@
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	var MessagesHistory = _react2.default.createClass({
-	  displayName: "MessagesHistory",
-	  getInitialState: function getInitialState() {
-	    return {};
-	  },
-	  render: function render() {
-	    return _react2.default.createElement(
-	      "div",
-	      null,
-	      "aldladapdaopdkpadkapdkapodkapodao"
-	    );
-	  }
+	    displayName: 'MessagesHistory',
+	    getInitialState: function getInitialState() {
+	        return {
+	            userId: 'aadsadasd',
+	            userName: 'Jack',
+	            message: 'How is everyone'
+	        };
+	    },
+	    render: function render() {
+	        return _react2.default.createElement(
+	            'div',
+	            { className: '' },
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'message message__in' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'message--user' },
+	                    'User: '
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'message--single' },
+	                    'aldladapapodao'
+	                )
+	            ),
+	            _react2.default.createElement(
+	                'div',
+	                { className: 'message message__out' },
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'message--user' },
+	                    'User: '
+	                ),
+	                _react2.default.createElement(
+	                    'span',
+	                    { className: 'message--single' },
+	                    'aldladapdaopdkpadkapdkapodkapodao'
+	                )
+	            )
+	        );
+	    }
 	});
 	
 	exports.default = MessagesHistory;
