@@ -3,7 +3,7 @@ import React from "react";
 const Self = React.createClass({
 
 	propTypes: {
-		user: React.PropTypes.string.isRequired
+		// userId: React.PropTypes.string.isRequired
 	},
 
 	getDefaultProps() {

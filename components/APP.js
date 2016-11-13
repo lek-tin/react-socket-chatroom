@@ -10,7 +10,8 @@ const APP = React.createClass({
     getInitialState() {
         return {
             status: 'disconnected',
-            user: ''        
+            userId: '',
+            userName: ''      
         }
     },
 
@@ -19,6 +20,7 @@ const APP = React.createClass({
         this.socket.on('connect', this._connect);
         this.socket.on('disconnect', this._disconnect);
         this.socket.on('welcome', this._welcome);
+        this.socket.on('broadcast', this._broadcast);
     },
 
     _connect() {
@@ -33,7 +35,12 @@ const APP = React.createClass({
 
     _welcome(serverState) {
         console.dir(serverState);
-        this.setState({ user: serverState.user, signature: serverState.signature });
+        // this.setState({ user: serverState.user, signature: serverState.signature });
+    },
+
+    _broadcast(serverState) {
+        console.dir(serverState);
+        // this.setState({ user: serverState.user, signature: serverState.signature });
     },
 
     render() {

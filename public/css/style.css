@@ -30,6 +30,10 @@ img {
 .collection .collection-item.avatar {
     min-height: auto !important;
 }
+.collection .collection-item:hover {
+    background-color: #eee;
+    cursor: pointer;
+}
 
 .container {
     background-color: #ddd;

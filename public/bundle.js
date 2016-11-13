@@ -21468,7 +21468,8 @@
 	    getInitialState: function getInitialState() {
 	        return {
 	            status: 'disconnected',
-	            user: ''
+	            userId: '',
+	            userName: ''
 	        };
 	    },
 	    componentWillMount: function componentWillMount() {
@@ -21476,6 +21477,7 @@
 	        this.socket.on('connect', this._connect);
 	        this.socket.on('disconnect', this._disconnect);
 	        this.socket.on('welcome', this._welcome);
+	        this.socket.on('broadcast', this._broadcast);
 	    },
 	    _connect: function _connect() {
 	        console.log("Conneted: " + this.socket.id);
@@ -21487,7 +21489,11 @@
 	    },
 	    _welcome: function _welcome(serverState) {
 	        console.dir(serverState);
-	        this.setState({ user: serverState.user, signature: serverState.signature });
+	        // this.setState({ user: serverState.user, signature: serverState.signature });
+	    },
+	    _broadcast: function _broadcast(serverState) {
+	        console.dir(serverState);
+	        // this.setState({ user: serverState.user, signature: serverState.signature });
 	    },
 	    render: function render() {
 	        return _react2.default.createElement(
@@ -29174,7 +29180,7 @@
 	
 	
 		propTypes: {
-			user: _react2.default.PropTypes.string.isRequired
+			// userId: React.PropTypes.string.isRequired
 		},
 	
 		getDefaultProps: function getDefaultProps() {
@@ -29370,16 +29376,23 @@
 	
 	var Dialog = _react2.default.createClass({
 	  displayName: "Dialog",
+	  getInitialState: function getInitialState() {
+	    return null;
+	  },
+	  shouldComponentUpdate: function shouldComponentUpdate(nextProps, nextState) {
+	    return false;
+	  },
+	  _broadcastMessages: function _broadcastMessages() {},
+	  _handleNewMessage: function _handleNewMessage(val) {
+	    console.log(val);
+	  },
 	  render: function render() {
 	    return _react2.default.createElement(
 	      "div",
 	      { className: "dialog" },
-	      _react2.default.createElement(_MessagesHistory2.default, null),
-	      _react2.default.createElement(_MessagesHistory2.default, null),
-	      _react2.default.createElement(_MessagesHistory2.default, null),
-	      _react2.default.createElement(_MessagesHistory2.default, null),
-	      _react2.default.createElement(_MessagesHistory2.default, null),
-	      _react2.default.createElement(_MessageInput2.default, null)
+	      _react2.default.createElement(_MessagesHistory2.default, { _broadcastMessages: this._broadcastMessages }),
+	      _react2.default.createElement(_MessagesHistory2.default, { _broadcastMessages: this._broadcastMessages }),
+	      _react2.default.createElement(_MessageInput2.default, { _handleNewMessage: this._handleNewMessage })
 	    );
 	  }
 	});
@@ -29414,17 +29427,17 @@
 		// 	};
 		// },
 	
-		_handleSend: function _handleSend(e) {
-			console.log(this.refs.inputBox);
+		_handleSend: function _handleSend() {
+			this.props._handleNewMessage(this.refs.inputBox.value);
 		},
 		render: function render() {
 			return _react2.default.createElement(
 				"div",
 				{ className: "message--input" },
-				_react2.default.createElement("input", { type: "text", ref: "inputBox", name: "MessageInput", id: "MessageInput" }),
+				_react2.default.createElement("input", { type: "text", ref: "inputBox", name: "MessageInput" }),
 				_react2.default.createElement(
 					"button",
-					{ ref: "sendButton", onSubmit: this._handleSend, className: "btn waves-effect waves-light", type: "submit", name: "action" },
+					{ ref: "sendButton", onClick: this._handleSend, className: "btn waves-effect waves-light", type: "submit", name: "action" },
 					_react2.default.createElement(
 						"i",
 						{ className: "material-icons right" },
